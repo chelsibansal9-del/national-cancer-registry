@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancer Registry Portal - Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #eef2f8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+    }
+
+    /* Header Banner */
+    .header-banner {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #2b589c 0%, #3a75c4 40%, #c86895 70%, #903c62 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .header-content {
+      text-align: center;
+      color: #ffffff;
+      z-index: 2;
+    }
+
+    .header-content h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-content p {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 140px;
+      opacity: 0.85;
+    }
+
+    .ribbon-left { left: 8%; }
+    .ribbon-right { right: 8%; }
+
+    /* Sub-bar showing Logged in User */
+    .user-bar {
+      width: 100%;
+      background: #ffffff;
+      padding: 12px 5%;
+      text-align: right;
+      border-bottom: 1px solid #dce2e8;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .user-info {
+      font-size: 0.95rem;
+      color: #444;
+      font-weight: 500;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .user-info span {
+      font-weight: 600;
+      color: #1b365d;
+    }
+
+    /* Main Container */
+    .dashboard-container {
+      width: 100%;
+      max-width: 900px;
+      margin-top: 30px;
+      padding: 0 20px;
+    }
+
+    .dashboard-card {
+      background: #fdfdfd;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      border: 1px solid #dbe2ea;
+      padding: 40px 30px;
+    }
+
+    /* Action Grid Options */
+    .grid-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .option-card {
+      background: #ffffff;
+      border: 1px solid #d5deea;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 250px;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .option-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(27, 54, 93, 0.12);
+      border-color: #2b589c;
+    }
+
+    .option-icon {
+      font-size: 4rem;
+      color: #1b365d;
+      margin-bottom: 20px;
+    }
+
+    .option-title {
+      color: #1b365d;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Footer Links */
+    .footer-links {
+      margin-top: 35px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links span {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Banner -->
+  <header class="header-banner">
+    <svg class="ribbon ribbon-left" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 100 C20 40, 10 10, 50 10 C90 10, 80 40, 50 100 C20 160, 10 190, 25 185 L50 135 L75 185 C90 190, 80 160, 50 100 Z" fill="#2d62a3" opacity="0.9"/>
+      <path d="M50 100 C20 40, 10 10, 50 10 C70 10, 75 25, 65 60 C55 90, 50 100, 50 100 Z" fill="#4d82c3" opacity="0.5"/>
+    </svg>
+
+    <div class="header-content">
+      <h1>Cancer Registry Portal</h1>
+      <p>Restricted Access for Authorized Users</p>
+    </div>
+
+    <svg class="ribbon ribbon-right" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 100 C20 40, 10 10, 50 10 C90 10, 80 40, 50 100 C20 160, 10 190, 25 185 L50 135 L75 185 C90 190, 80 160, 50 100 Z" fill="#e06998" opacity="0.9"/>
+      <path d="M50 100 C20 40, 10 10, 50 10 C70 10, 75 25, 65 60 C55 90, 50 100, 50 100 Z" fill="#f48bb8" opacity="0.5"/>
+    </svg>
+  </header>
+
+  <!-- User Info Sub-bar -->
+  <div class="user-bar">
+    <div class="user-info">
+      Logged in as: <span id="displayUser">[USER_NAME]</span>
+    </div>
+  </div>
+
+  <!-- Dashboard Container -->
+  <main class="dashboard-container">
+    <div class="dashboard-card">
+      <div class="grid-options">
+        
+        <!-- New Intake -->
+        <a href="#" class="option-card">
+          <i class="fa-solid fa-folder-plus option-icon"></i>
+          <span class="option-title">New Intake</span>
+        </a>
+
+        <!-- Follow Up -->
+        <a href="#" class="option-card">
+          <i class="fa-solid fa-calendar-check option-icon"></i>
+          <span class="option-title">Follow Up</span>
+        </a>
+
+        <!-- Patient Records -->
+        <a href="#" class="option-card">
+          <i class="fa-solid fa-folder-open option-icon"></i>
+          <span class="option-title">Patient Records</span>
+        </a>
+
+      </div>
+    </div>
+
+    <footer class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <span>|</span>
+      <a href="#">Support</a>
+    </footer>
+  </main>
+
+  <script>
+    // Retrieve username saved during login
+    const savedUser = localStorage.getItem('username');
+    if (savedUser) {
+      document.getElementById('displayUser').textContent = savedUser;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancer Registry Portal - Login</title>
+  <!-- Font Awesome for User and Lock Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #eef2f8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+    }
+
+    /* Header Banner */
+    .header-banner {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #2b589c 0%, #3a75c4 40%, #c86895 70%, #903c62 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    /* Header Text Content */
+    .header-content {
+      text-align: center;
+      color: #ffffff;
+      z-index: 2;
+    }
+
+    .header-content h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-content p {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    /* Ribbons (Decorative SVG styling) */
+    .ribbon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 140px;
+      opacity: 0.85;
+    }
+
+    .ribbon-left {
+      left: 8%;
+    }
+
+    .ribbon-right {
+      right: 8%;
+    }
+
+    /* Login Card Container */
+    .login-container {
+      width: 100%;
+      max-width: 440px;
+      margin-top: -30px; /* Pulls card up slightly into the banner area */
+      z-index: 10;
+      padding: 0 15px;
+    }
+
+    .login-card {
+      background: #ffffff;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border: 1px solid #dbe2ea;
+      overflow: hidden;
+    }
+
+    /* Card Header */
+    .card-header {
+      padding: 20px 0 15px 0;
+      text-align: center;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .card-header h2 {
+      color: #1b365d;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    /* Card Body */
+    .card-body {
+      padding: 25px 30px 35px 30px;
+    }
+
+    .sub-title {
+      text-align: center;
+      color: #555555;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+
+    /* Form Fields */
+    .form-group {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #1b365d;
+      font-size: 1.1rem;
+    }
+	<form id="loginForm">
+	<input type="text" id="userId" class="form-control" placeholder="User ID" required>
+    .form-control {
+      width: 100%;
+      height: 44px;
+      padding: 8px 12px 8px 42px;
+      font-size: 0.95rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fafafa;
+      color: #333;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #2b589c;
+      background-color: #fff;
+    }
+
+    .form-control::placeholder {
+      color: #777;
+    }
+
+    /* Links & Buttons */
+    .forgot-password {
+      text-align: right;
+      margin-top: -5px;
+      margin-bottom: 25px;
+    }
+
+    .forgot-password a {
+      color: #2b589c;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-login {
+      width: 100%;
+      height: 45px;
+      background: linear-gradient(to bottom, #2d60aa, #173f7a);
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s;
+    }
+
+    .btn-login:hover {
+      background: linear-gradient(to bottom, #235193, #113161);
+    }
+
+    /* Footer Links */
+    .footer-links {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links span {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section with Ribbons -->
+  <header class="header-banner">
+    <!-- Blue Ribbon SVG (Left) -->
+    <svg class="ribbon ribbon-left" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 100 C20 40, 10 10, 50 10 C90 10, 80 40, 50 100 C20 160, 10 190, 25 185 L50 135 L75 185 C90 190, 80 160, 50 100 Z" fill="#2d62a3" opacity="0.9"/>
+      <path d="M50 100 C20 40, 10 10, 50 10 C70 10, 75 25, 65 60 C55 90, 50 100, 50 100 Z" fill="#4d82c3" opacity="0.5"/>
+    </svg>
+
+    <!-- Header Text -->
+    <div class="header-content">
+      <h1>Cancer Registry Portal</h1>
+      <p>Restricted Access for Authorized Users</p>
+    </div>
+
+    <!-- Pink Ribbon SVG (Right) -->
+    <svg class="ribbon ribbon-right" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 100 C20 40, 10 10, 50 10 C90 10, 80 40, 50 100 C20 160, 10 190, 25 185 L50 135 L75 185 C90 190, 80 160, 50 100 Z" fill="#e06998" opacity="0.9"/>
+      <path d="M50 100 C20 40, 10 10, 50 10 C70 10, 75 25, 65 60 C55 90, 50 100, 50 100 Z" fill="#f48bb8" opacity="0.5"/>
+    </svg>
+  </header>
+
+  <!-- Login Form Container -->
+  <main class="login-container">
+    <div class="login-card">
+      <div class="card-header">
+        <h2>Login</h2>
+      </div>
+
+      <div class="card-body">
+        <p class="sub-title">Authorized access only. Please sign in.</p>
+
+        <form action="#" method="POST">
+          <!-- User ID Input -->
+          <div class="form-group">
+            <i class="fa-solid fa-user input-icon"></i>
+            <input type="text" class="form-control" placeholder="User ID" required>
+          </div>
+
+          <!-- Password Input -->
+          <div class="form-group">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" class="form-control" placeholder="Enter your Password" required>
+          </div>
+
+          <!-- Forgot Password Link -->
+          <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-login">Login</button>
+        </form>
+      </div>
+    </div>
+	<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('userId').value;
+    // Save user ID to localStorage so the dashboard can display it
+    localStorage.setItem('username', username);
+    // Redirect to the dashboard page
+    window.location.href = 'dashboard.html';
+  });
+</script>
+
+    <!-- Footer Links -->
+    <footer class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <span>|</span>
+      <a href="#">Support</a>
+    </footer>
+  </main>
+
+</body>
+</html>
