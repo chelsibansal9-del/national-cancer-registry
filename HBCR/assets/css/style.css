@@ -1,0 +1,3778 @@
+/* =========================================================
+   HBCR MASTER THEME
+   ONE COMMON THEME FOR ALL MODULES
+========================================================= */
+
+:root {
+    --hbcr-primary: #08a88f;
+    --hbcr-primary-dark: #087f70;
+    --hbcr-primary-light: #e7f8f4;
+
+    --hbcr-blue: #1769e0;
+
+    --hbcr-bg: #f4f9f8;
+    --hbcr-white: #ffffff;
+
+    --hbcr-text: #18373e;
+    --hbcr-muted: #6d858b;
+
+    --hbcr-border: #dce9e7;
+
+    --hbcr-success: #12a474;
+    --hbcr-danger: #e85b68;
+    --hbcr-warning: #d99a2b;
+
+    --hbcr-sidebar-width: 235px;
+
+    --hbcr-radius: 16px;
+
+    --hbcr-shadow:
+        0 6px 22px rgba(25, 73, 76, 0.08);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5fbfa 0%,
+            #f7fbff 50%,
+            #f3faf8 100%
+        );
+
+    color: var(--hbcr-text);
+
+    font-size: 14px;
+
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.hbcr-header {
+
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    left: var(--hbcr-sidebar-width);
+
+    height: 70px;
+
+    background: rgba(255,255,255,0.98);
+
+    border-bottom: 1px solid var(--hbcr-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 2px 15px rgba(25,73,76,0.05);
+}
+
+
+/* HEADER BRAND */
+
+.hbcr-header-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    min-width: 0;
+}
+
+
+.hbcr-header-logo {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 11px;
+
+    background: white;
+
+    border: 1px solid var(--hbcr-border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 12px;
+
+    flex-shrink: 0;
+}
+
+
+.hbcr-header-logo img {
+
+    width: 31px;
+    height: 31px;
+
+    object-fit: cover;
+}
+
+
+.hbcr-header-title {
+
+    min-width: 0;
+}
+
+
+.hbcr-header-title h1 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    line-height: 22px;
+
+    font-weight: 700;
+
+    color: #17363c;
+}
+
+
+.hbcr-header-title p {
+
+    margin: 2px 0 0;
+
+    font-size: 9px;
+
+    color: var(--hbcr-muted);
+
+    letter-spacing: .2px;
+}
+
+
+/* ADMIN */
+
+.hbcr-admin-profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+.hbcr-admin-avatar {
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: var(--hbcr-primary-light);
+
+    color: var(--hbcr-primary-dark);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+
+.hbcr-admin-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.2;
+}
+
+
+.hbcr-admin-text strong {
+
+    font-size: 12px;
+
+    color: #234047;
+}
+
+
+.hbcr-admin-text span {
+
+    font-size: 9px;
+
+    color: #819499;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+/* =========================================================
+   SIDEBAR - DARK TEAL + DECORATIVE CIRCLES
+========================================================= */
+
+.hbcr-sidebar {
+
+    position: fixed;
+
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+
+    width: var(--hbcr-sidebar-width);
+
+    background:
+        linear-gradient(
+            180deg,
+            #075f5b 0%,
+            #064f4d 50%,
+            #043f3e 100%
+        );
+
+    border-radius: 0 24px 24px 0;
+
+    color: white;
+
+    z-index: 1100;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    box-shadow:
+        5px 0 25px rgba(3,55,53,.25);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+========================================================= */
+
+.hbcr-sidebar::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    top: -95px;
+    right: -105px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    pointer-events: none;
+}
+
+
+.hbcr-sidebar::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    bottom: -75px;
+    left: -80px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    pointer-events: none;
+}
+/* SIDEBAR BRAND */
+
+.hbcr-sidebar-brand {
+
+    text-align: center;
+
+    padding: 22px 10px 18px;
+}
+
+
+.hbcr-sidebar-logo {
+
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    margin: 0 auto 9px;
+
+    position: relative;
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.12);
+}
+
+
+.hbcr-sidebar-logo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+}
+
+
+.hbcr-sidebar-brand h2 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+.hbcr-sidebar-brand span {
+
+    display: block;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 9px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.hbcr-sidebar-nav {
+
+    flex: 1;
+
+    padding: 4px 12px;
+
+    overflow-y: auto;
+
+    scrollbar-width: none;
+}
+
+.hbcr-sidebar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* SECTION */
+
+.hbcr-nav-section {
+
+    padding: 16px 10px 7px;
+
+    color: rgba(255,255,255,.58);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .7px;
+
+    text-transform: uppercase;
+}
+
+
+/* NAV ITEM */
+
+.hbcr-nav-item {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 45px;
+
+    margin: 3px 0;
+
+    padding: 8px 12px;
+
+    border-radius: 11px;
+
+    color: rgba(255,255,255,.95);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: all .2s ease;
+}
+
+
+.hbcr-nav-item:hover {
+
+    background: rgba(255,255,255,.13);
+
+    color: white;
+
+    transform: translateX(2px);
+}
+
+
+/* ACTIVE */
+
+.hbcr-nav-item.active {
+
+    background: white;
+
+    color: var(--hbcr-primary-dark);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.10);
+}
+
+
+.hbcr-nav-item.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 7px;
+
+    bottom: 7px;
+
+    width: 4px;
+
+    border-radius: 0 6px 6px 0;
+
+    background: var(--hbcr-primary);
+}
+
+
+.hbcr-nav-item.active .hbcr-nav-icon {
+
+    background: var(--hbcr-primary-light);
+
+    color: var(--hbcr-primary-dark);
+}
+
+
+/* ICON */
+
+.hbcr-nav-icon {
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 14px;
+}
+
+
+.hbcr-nav-text {
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+========================================================= */
+
+.hbcr-sidebar-footer {
+
+    padding: 10px 12px 15px;
+    align-items: center;
+
+
+    border-top:
+        1px solid rgba(255,255,255,.14);
+}
+
+
+.hbcr-logout {
+
+    min-height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 12px;
+
+    color: white;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.hbcr-logout:hover {
+
+    background: rgba(255,255,255,.12);
+
+    color: white;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+/* =========================================================
+   MAIN CONTENT - HEADER SAFE AREA
+========================================================= */
+
+.main-content {
+    margin-left: var(--hbcr-sidebar-width);
+
+    /* 70px header + 22px spacing */
+    padding: 92px 28px 40px;
+
+    min-height: 100vh;
+
+    width: calc(100% - var(--hbcr-sidebar-width));
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.hbcr-page-header {
+
+    background: rgba(255,255,255,.97);
+
+    border:
+        1px solid var(--hbcr-border);
+
+    border-radius: var(--hbcr-radius);
+
+    padding: 20px 23px;
+
+    margin-bottom: 18px;
+
+    box-shadow: var(--hbcr-shadow);
+}
+
+
+.hbcr-page-header h1,
+.hbcr-page-header h2,
+.hbcr-page-header h3 {
+
+    margin: 0;
+
+    color: #17363c;
+
+    font-weight: 700;
+}
+
+
+.hbcr-page-header p {
+
+    margin: 5px 0 0;
+
+    color: var(--hbcr-muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card {
+
+    border:
+        1px solid var(--hbcr-border) !important;
+
+    border-radius:
+        var(--hbcr-radius) !important;
+
+    background:
+        #fff !important;
+
+    box-shadow:
+        var(--hbcr-shadow);
+
+    overflow: hidden;
+}
+
+
+.card-header {
+
+    border: 0 !important;
+
+    padding: 17px 20px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0cae96,
+            #078c78
+        ) !important;
+
+    color: white !important;
+}
+
+
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h4 {
+
+    color: white !important;
+
+    margin: 0;
+
+    font-weight: 700;
+}
+
+
+.card-body {
+
+    padding: 20px !important;
+}
+
+
+/* =========================================================
+   LIST HEADER
+========================================================= */
+
+.hbcr-list-header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #0cae96,
+            #078c78
+        );
+
+    color: white;
+
+    border-radius:
+        var(--hbcr-radius);
+
+    padding: 18px 21px;
+
+    margin-bottom: 16px;
+
+    box-shadow:
+        0 7px 20px rgba(7,140,119,.16);
+}
+
+
+.hbcr-list-header h1,
+.hbcr-list-header h2,
+.hbcr-list-header h3 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.hbcr-list-header p {
+
+    margin: 4px 0 0;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   BUTTONS - SAME EVERYWHERE
+========================================================= */
+
+.btn,
+.hbcr-action-btn {
+
+    border-radius:
+        8px !important;
+
+    font-size:
+        11px !important;
+
+    font-weight:
+        600 !important;
+
+    padding:
+        8px 12px !important;
+
+    border:
+        0 !important;
+
+    transition:
+        all .15s ease;
+}
+
+
+.btn:hover,
+.hbcr-action-btn:hover {
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.10);
+}
+
+
+.btn-primary {
+
+    background:
+        var(--hbcr-primary) !important;
+
+    color: white !important;
+}
+
+
+.btn-success {
+
+    background:
+        var(--hbcr-success) !important;
+
+    color: white !important;
+}
+
+
+.btn-danger {
+
+    background:
+        var(--hbcr-danger) !important;
+
+    color: white !important;
+}
+
+
+.btn-warning {
+
+    background:
+        var(--hbcr-warning) !important;
+
+    color: white !important;
+}
+
+
+/* ACTION */
+
+.hbcr-action-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 2px;
+}
+
+
+.hbcr-action-view {
+
+    background: #e7f7f3;
+
+    color: #078878;
+}
+
+
+.hbcr-action-edit {
+
+    background: #fff2d8;
+
+    color: #9d6807;
+}
+
+
+.hbcr-action-delete {
+
+    background: #ffe6ea;
+
+    color: #c83f4e;
+}
+
+
+/* =========================================================
+   TABLES - SAME EVERYWHERE
+========================================================= */
+
+.table-responsive {
+
+    width: 100%;
+
+    border-radius: 12px;
+
+    overflow-x: auto;
+
+    border:
+        1px solid var(--hbcr-border);
+}
+
+
+.table {
+
+    width: 100%;
+
+    margin-bottom: 0 !important;
+
+    color: #365158;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+
+    background: white;
+}
+
+
+.table thead th {
+
+    background:
+        #edf8f6 !important;
+
+    color:
+        #36545a !important;
+
+    font-size:
+        11px !important;
+
+    font-weight:
+        700 !important;
+
+    padding:
+        12px 11px !important;
+
+    border-bottom:
+        1px solid #cfe3df !important;
+
+    white-space:
+        nowrap;
+
+    vertical-align:
+        middle;
+}
+
+
+.table tbody td {
+
+    padding:
+        12px 11px !important;
+
+    font-size:
+        11px !important;
+
+    color:
+        #536b71 !important;
+
+    border-color:
+        #e5eeee !important;
+
+    vertical-align:
+        middle;
+}
+
+
+.table tbody tr {
+
+    transition:
+        background .15s ease;
+}
+
+
+.table tbody tr:hover {
+
+    background:
+        #f4fbfa !important;
+}
+
+
+.table-dark th {
+
+    background:
+        #087f70 !important;
+
+    color:
+        white !important;
+}
+
+
+.table-bordered {
+
+    border-color:
+        #dce9e7 !important;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge {
+
+    border-radius:
+        20px !important;
+
+    padding:
+        5px 9px !important;
+
+    font-size:
+        9px !important;
+
+    font-weight:
+        600 !important;
+}
+
+
+.bg-success {
+
+    background:
+        #dff7ed !important;
+
+    color:
+        #087f60 !important;
+}
+
+
+.bg-danger {
+
+    background:
+        #ffe4e8 !important;
+
+    color:
+        #c23e50 !important;
+}
+
+
+.bg-warning {
+
+    background:
+        #fff0d5 !important;
+
+    color:
+        #a76c08 !important;
+}
+
+
+/* =========================================================
+   FORM CONTROLS
+========================================================= */
+
+.form-control,
+.form-select {
+
+    border:
+        1px solid #d4e3e1 !important;
+
+    border-radius:
+        9px !important;
+
+    min-height:
+        40px;
+
+    font-size:
+        12px !important;
+
+    color:
+        #38545a;
+
+    background:
+        white !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+
+    border-color:
+        var(--hbcr-primary) !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(8,168,143,.10) !important;
+}
+
+
+textarea.form-control {
+
+    min-height:
+        90px;
+}
+
+
+.main-content label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        #39545a;
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+}
+
+
+/* =========================================================
+   IMPORTANT FORM GRID
+   THIS IS THE ONLY CUSTOM FORM GRID
+========================================================= */
+
+.hbcr-form-grid {
+
+    display:
+        grid !important;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap:
+        16px 18px;
+
+    width:
+        100%;
+}
+
+
+.hbcr-form-grid > * {
+
+    min-width:
+        0;
+}
+
+
+.hbcr-form-field {
+
+    min-width:
+        0;
+}
+
+
+.hbcr-form-field.full {
+
+    grid-column:
+        1 / -1;
+}
+
+
+.hbcr-form-field.half {
+
+    grid-column:
+        span 2;
+}
+
+
+/* =========================================================
+   OTHER FORM GRIDS
+========================================================= */
+
+.patient-info-grid,
+.patient-information-grid,
+.diagnosis-form-grid,
+.treatment-form-grid,
+.followup-form-grid {
+
+    display:
+        grid !important;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap:
+        16px 18px;
+
+    width:
+        100%;
+}
+
+
+.patient-info-grid > *,
+.patient-information-grid > *,
+.diagnosis-form-grid > *,
+.treatment-form-grid > *,
+.followup-form-grid > * {
+
+    min-width:
+        0;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.hbcr-form-section {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--hbcr-border);
+
+    border-radius:
+        var(--hbcr-radius);
+
+    padding:
+        20px;
+
+    margin-bottom:
+        16px;
+
+    box-shadow:
+        var(--hbcr-shadow);
+}
+
+
+.hbcr-form-section-title {
+
+    margin:
+        0 0 17px;
+
+    font-size:
+        17px;
+
+    font-weight:
+        700;
+
+    color:
+        #17363c;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+}
+
+
+.hbcr-form-section-title i {
+
+    color:
+        var(--hbcr-primary);
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.hbcr-dashboard-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+   background:
+    linear-gradient(
+        135deg,
+        #fff8ee 0%,
+        #fffdf8 100%
+    );
+    border:
+        1px solid var(--hbcr-border);
+
+    border-radius:
+        var(--hbcr-radius);
+
+    padding:
+        20px 23px;
+
+    margin-bottom:
+        17px;
+}
+
+
+.hbcr-dashboard-header h1 {
+
+    margin:
+        0;
+
+    font-size:
+        23px;
+
+    color:
+        #18373e;
+}
+
+
+.hbcr-dashboard-header p {
+
+    margin:
+        4px 0 0;
+
+    color:
+        var(--hbcr-muted);
+
+    font-size:
+        11px;
+}
+
+
+.hbcr-stats-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:
+        15px;
+
+    margin-bottom:
+        16px;
+}
+
+
+.hbcr-stat-card {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--hbcr-border);
+
+    border-radius:
+        var(--hbcr-radius);
+
+    padding:
+        18px;
+
+    box-shadow:
+        var(--hbcr-shadow);
+
+    min-height:
+        115px;
+}
+
+
+.hbcr-stat-card h3 {
+
+    margin:
+        8px 0 2px;
+
+    font-size:
+        25px;
+
+    color:
+        #17363c;
+}
+
+
+.hbcr-stat-card p {
+
+    margin:
+        0;
+
+    font-size:
+        11px;
+
+    color:
+        var(--hbcr-muted);
+}
+
+
+.hbcr-dashboard-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0,2fr)
+        minmax(280px,1fr);
+
+    gap:
+        16px;
+}
+
+
+.hbcr-dashboard-card {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--hbcr-border);
+
+    border-radius:
+        var(--hbcr-radius);
+
+    padding:
+        18px;
+
+    box-shadow:
+        var(--hbcr-shadow);
+}
+
+
+.hbcr-dashboard-card h3 {
+
+    margin:
+        0 0 5px;
+
+    font-size:
+        16px;
+
+    color:
+        #18373e;
+}
+
+
+/* =========================================================
+   REPORTS
+========================================================= */
+
+.hbcr-report-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:
+        16px;
+}
+
+
+.hbcr-report-card {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--hbcr-border);
+
+    border-radius:
+        var(--hbcr-radius);
+
+    padding:
+        20px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        var(--hbcr-shadow);
+
+    transition:
+        transform .2s ease;
+}
+
+
+.hbcr-report-card:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+
+.hbcr-report-card i {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--hbcr-primary-light);
+
+    color:
+        var(--hbcr-primary-dark);
+
+    font-size:
+        20px;
+
+    margin-bottom:
+        10px;
+}
+
+
+.hbcr-report-card h4 {
+
+    margin:
+        0;
+
+    font-size:
+        14px;
+
+    color:
+        #24444a;
+}
+
+
+.hbcr-report-card p {
+
+    font-size:
+        10px;
+
+    color:
+        var(--hbcr-muted);
+
+    margin:
+        5px 0 13px;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.alert {
+
+    border-radius:
+        10px !important;
+
+    font-size:
+        11px;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+
+    gap:
+        4px;
+}
+
+
+.page-link {
+
+    border:
+        1px solid var(--hbcr-border) !important;
+
+    border-radius:
+        7px !important;
+
+    color:
+        var(--hbcr-primary-dark);
+
+    font-size:
+        10px;
+
+    padding:
+        6px 9px;
+}
+
+
+.page-item.active .page-link {
+
+    background:
+        var(--hbcr-primary) !important;
+
+    border-color:
+        var(--hbcr-primary) !important;
+
+    color:
+        white !important;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+/* =========================================================
+   LOGIN PAGE - BACKGROUND IMAGE
+========================================================= */
+
+.hbcr-login-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(4, 65, 59, 0.68),
+            rgba(4, 65, 59, 0.68)
+        ),
+        url("../images/hospital-bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+.hbcr-login-card {
+
+    width:
+        100%;
+
+    max-width:
+        430px;
+
+    background:
+        white;
+
+    border-radius:
+        20px;
+
+    border:
+        1px solid var(--hbcr-border);
+
+    padding:
+        30px;
+
+    box-shadow:
+        0 18px 55px
+        rgba(23,75,76,.12);
+}
+
+
+.hbcr-login-logo {
+
+    width:
+        72px;
+
+    height:
+        72px;
+
+    margin:
+        0 auto 10px;
+
+    border-radius:
+        50%;
+
+    background:
+        white;
+
+    border:
+        1px solid var(--hbcr-border);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+
+.hbcr-login-logo {
+    display: block;
+
+    width: 180px !important;
+    height: 90px !important;
+
+    max-width: none !important;
+
+    margin: 0 auto 20px;
+
+    padding: 10px 18px;
+
+    background: #ffffff !important;
+
+    border: 1px solid #d9e4e2;
+
+    border-radius: 12px;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 4px 14px rgba(22, 78, 74, 0.14);
+}
+
+
+.hbcr-login-card h1 {
+
+    text-align:
+        center;
+
+    font-size:
+        23px;
+
+    margin:
+        0;
+
+    color:
+        #17363c;
+}
+
+
+.hbcr-login-card .subtitle {
+
+    text-align:
+        center;
+
+    color:
+        var(--hbcr-muted);
+
+    font-size:
+        11px;
+
+    margin:
+        5px 0 22px;
+}
+
+
+/* =========================================================
+   REMOVE OLD NOTIFICATION
+========================================================= */
+
+.notification,
+.notification-icon,
+.hbcr-notification,
+.hbcr-notification-icon,
+#notification,
+#notificationIcon {
+
+    display:
+        none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .hbcr-form-grid,
+    .patient-info-grid,
+    .patient-information-grid,
+    .diagnosis-form-grid,
+    .treatment-form-grid,
+    .followup-form-grid {
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+
+    .hbcr-stats-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .hbcr-report-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    :root {
+
+        --hbcr-sidebar-width:
+            210px;
+    }
+
+    .main-content {
+
+        padding-left:
+            20px;
+
+        padding-right:
+            20px;
+    }
+
+    .hbcr-dashboard-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    :root {
+
+        --hbcr-sidebar-width:
+            0px;
+    }
+
+    .hbcr-sidebar {
+
+        left:
+            -220px;
+
+        width:
+            210px;
+    }
+
+    .hbcr-header {
+
+        left:
+            0;
+    }
+
+    .main-content {
+
+        margin-left:
+            0;
+
+        width:
+            100%;
+
+        padding:
+            88px 14px 30px;
+    }
+
+    .hbcr-form-grid,
+    .patient-info-grid,
+    .patient-information-grid,
+    .diagnosis-form-grid,
+    .treatment-form-grid,
+    .followup-form-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .hbcr-dashboard-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .hbcr-form-grid,
+    .patient-info-grid,
+    .patient-information-grid,
+    .diagnosis-form-grid,
+    .treatment-form-grid,
+    .followup-form-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .hbcr-form-field.half {
+
+        grid-column:
+            auto;
+    }
+
+    .hbcr-stats-grid,
+    .hbcr-report-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .hbcr-header-title h1 {
+
+        font-size:
+            14px;
+    }
+
+    .hbcr-admin-text {
+
+        display:
+            none;
+    }
+
+    .table {
+
+        min-width:
+            750px;
+    }
+
+    .table-responsive {
+
+        overflow-x:
+            auto;
+    }
+}
+/* =========================================================
+   HBCR FORM LAYOUT - FINAL FIX
+   IMPORTANT:
+   Patient registration uses:
+   .row > .form-group
+
+   Therefore DO NOT depend on Bootstrap col-md classes.
+========================================================= */
+
+/* Main form rows */
+.main-content form .row {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr)) !important;
+
+    column-gap: 18px !important;
+    row-gap: 16px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+}
+
+
+/* Every form field occupies ONE grid cell */
+.main-content form .row > .form-group {
+    display: block !important;
+
+    width: auto !important;
+
+    max-width: none !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    float: none !important;
+}
+
+
+/* Full-width fields */
+.main-content form .row > .form-group.full {
+    grid-column: 1 / -1 !important;
+
+    width: auto !important;
+}
+
+
+/* Half-width fields if used anywhere */
+.main-content form .row > .form-group.half {
+    grid-column: span 2 !important;
+}
+
+
+/* Third-width fields if used anywhere */
+.main-content form .row > .form-group.third {
+    grid-column: span 1 !important;
+}
+
+
+/* Form labels */
+.main-content form .form-group > label {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin-bottom: 6px !important;
+
+    color: #39545a !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1.35 !important;
+}
+
+
+/* Inputs */
+.main-content form .form-group .form-control,
+.main-content form .form-group .form-select {
+    display: block !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    min-height: 40px !important;
+
+    margin: 0 !important;
+
+    font-size: 12px !important;
+}
+
+
+/* Textarea */
+.main-content form .form-group textarea.form-control {
+    min-height: 90px !important;
+
+    resize: vertical;
+}
+
+
+/* Help text */
+.main-content form .field-help {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #7b8d91;
+}
+
+
+/* =========================================================
+   FORM SECTION / CARD
+========================================================= */
+
+.main-content form > .card {
+    width: 100% !important;
+
+    margin-bottom: 16px !important;
+
+    padding: 0 !important;
+
+    overflow: visible !important;
+}
+
+
+/* Card heading */
+.main-content form > .card > h3 {
+    margin: 0 !important;
+
+    padding: 15px 18px !important;
+
+    background: #edf8f6 !important;
+
+    border-bottom: 1px solid #dce9e7 !important;
+
+    color: #164e4a !important;
+
+    font-size: 16px !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.4 !important;
+}
+
+
+/* Card content area:
+   Your .row itself becomes the content area */
+.main-content form > .card > .row {
+    padding: 18px !important;
+}
+
+
+/* =========================================================
+   PHONE INPUT
+========================================================= */
+
+.main-content form .phone-input {
+    display: flex !important;
+
+    width: 100% !important;
+
+    min-width: 0 !important;
+}
+
+
+.main-content form .phone-prefix {
+    flex: 0 0 auto !important;
+
+    height: 40px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    padding: 0 12px !important;
+
+    background: #f1f5f4 !important;
+
+    border: 1px solid #d4e3e1 !important;
+
+    border-right: 0 !important;
+
+    border-radius: 9px 0 0 9px !important;
+
+    color: #496167 !important;
+
+    font-size: 12px !important;
+
+    font-weight: 600 !important;
+}
+
+
+.main-content form .phone-input .phone-field {
+    flex: 1 1 auto !important;
+
+    min-width: 0 !important;
+
+    border-radius: 0 9px 9px 0 !important;
+}
+
+
+/* =========================================================
+   FORM HELP PARAGRAPH
+========================================================= */
+
+.main-content form .form-help {
+    margin: 0 !important;
+
+    padding: 12px 18px 0 !important;
+
+    color: #718489 !important;
+
+    font-size: 11px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   SAVE BUTTON AREA
+========================================================= */
+
+.main-content form > div[style*="margin"] {
+    margin: 20px 0 30px !important;
+
+    display: flex !important;
+
+    justify-content: flex-end !important;
+}
+
+
+.main-content form > div[style*="margin"] .btn {
+    min-height: 42px !important;
+
+    padding: 9px 20px !important;
+
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   REQUIRED STAR
+========================================================= */
+
+.main-content form .required {
+    color: #dc3545 !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .main-content form .row {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+@media (max-width: 992px) {
+
+    .main-content form .row {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .main-content form .row {
+        grid-template-columns:
+            1fr !important;
+
+        gap: 14px !important;
+    }
+
+    .main-content form .row > .form-group.full,
+    .main-content form .row > .form-group.half {
+        grid-column: auto !important;
+    }
+
+}
+/* =========================================================
+   HBCR - UNIFIED LIST DESIGN
+   Patient / Diagnosis / Treatment / Follow-up
+========================================================= */
+
+.hbcr-list-page {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* PAGE TITLE */
+
+.hbcr-list-header {
+    width: 100% !important;
+
+    margin: 0 0 16px !important;
+
+    padding: 18px 20px !important;
+
+    border-radius: 15px !important;
+
+    background: linear-gradient(
+        135deg,
+        #0cae96 0%,
+        #07927e 100%
+    ) !important;
+
+    color: #fff !important;
+
+    box-shadow:
+        0 7px 20px rgba(7, 140, 119, 0.14) !important;
+}
+
+.hbcr-list-header h1,
+.hbcr-list-header h2,
+.hbcr-list-header h3 {
+    margin: 0 !important;
+
+    color: #fff !important;
+
+    font-size: 20px !important;
+
+    font-weight: 700 !important;
+}
+
+.hbcr-list-header p {
+    margin: 4px 0 0 !important;
+
+    color: rgba(255,255,255,.82) !important;
+
+    font-size: 11px !important;
+}
+
+
+/* SEARCH / TOOLBAR CARD */
+
+.hbcr-list-toolbar,
+.list-toolbar,
+.search-card {
+    width: 100% !important;
+
+    background: #fff !important;
+
+    border: 1px solid #dce9e7 !important;
+
+    border-radius: 15px !important;
+
+    padding: 14px 16px !important;
+
+    margin-bottom: 14px !important;
+
+    box-shadow:
+        0 5px 20px rgba(25,73,76,.07) !important;
+}
+
+
+/* SEARCH INPUT */
+
+.hbcr-list-toolbar .form-control,
+.hbcr-list-toolbar .form-select,
+.list-toolbar .form-control,
+.list-toolbar .form-select,
+.search-card .form-control,
+.search-card .form-select {
+    min-height: 39px !important;
+
+    border-radius: 9px !important;
+
+    border: 1px solid #d4e3e1 !important;
+
+    font-size: 12px !important;
+}
+
+
+/* TABLE CARD */
+
+.hbcr-list-card {
+    width: 100% !important;
+
+    background: #fff !important;
+
+    border: 1px solid #dce9e7 !important;
+
+    border-radius: 15px !important;
+
+    box-shadow:
+        0 5px 20px rgba(25,73,76,.07) !important;
+
+    overflow: hidden !important;
+}
+
+
+/* TABLE CONTAINER */
+
+.hbcr-list-card .table-responsive,
+.hbcr-list-page .table-responsive {
+    width: 100% !important;
+
+    border: 1px solid #dce9e7 !important;
+
+    border-radius: 12px !important;
+
+    overflow-x: auto !important;
+
+    background: #fff !important;
+}
+
+
+/* ALL LIST TABLES */
+
+.hbcr-list-card .table,
+.hbcr-list-page .table {
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    background: #fff !important;
+
+    border-collapse: separate !important;
+
+    border-spacing: 0 !important;
+
+    color: #365158 !important;
+
+    font-size: 11px !important;
+}
+
+
+/* TABLE HEADER */
+
+.hbcr-list-card .table thead th,
+.hbcr-list-page .table thead th {
+    background: #edf8f6 !important;
+
+    color: #36545a !important;
+
+    border-bottom: 1px solid #cfe3df !important;
+
+    padding: 12px 11px !important;
+
+    font-size: 10px !important;
+
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+
+    vertical-align: middle !important;
+}
+
+
+/* TABLE BODY */
+
+.hbcr-list-card .table tbody td,
+.hbcr-list-page .table tbody td {
+    padding: 11px !important;
+
+    font-size: 11px !important;
+
+    color: #536b71 !important;
+
+    border-bottom: 1px solid #e5eeee !important;
+
+    vertical-align: middle !important;
+
+    background: #fff !important;
+}
+
+
+/* LAST ROW */
+
+.hbcr-list-card .table tbody tr:last-child td,
+.hbcr-list-page .table tbody tr:last-child td {
+    border-bottom: 0 !important;
+}
+
+
+/* HOVER */
+
+.hbcr-list-card .table tbody tr:hover td,
+.hbcr-list-page .table tbody tr:hover td {
+    background: #f4fbfa !important;
+
+    transition: background .15s ease;
+}
+
+
+/* =========================================================
+   SAME BUTTONS EVERYWHERE
+========================================================= */
+
+.hbcr-list-page .btn,
+.hbcr-list-card .btn,
+.hbcr-list-page .hbcr-action-btn,
+.hbcr-list-card .hbcr-action-btn {
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 5px !important;
+
+    min-height: 30px !important;
+
+    padding: 6px 10px !important;
+
+    margin: 2px !important;
+
+    border: 0 !important;
+
+    border-radius: 8px !important;
+
+    font-size: 10px !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1 !important;
+
+    text-decoration: none !important;
+
+    box-shadow: none !important;
+}
+
+
+/* VIEW */
+
+.hbcr-list-page .hbcr-action-view,
+.hbcr-list-card .hbcr-action-view {
+    background: #e7f7f3 !important;
+
+    color: #078878 !important;
+}
+
+
+/* EDIT */
+
+.hbcr-list-page .hbcr-action-edit,
+.hbcr-list-card .hbcr-action-edit {
+    background: #fff4dd !important;
+
+    color: #a66a05 !important;
+}
+
+
+/* DELETE */
+
+.hbcr-list-page .hbcr-action-delete,
+.hbcr-list-card .hbcr-action-delete {
+    background: #ffe7ea !important;
+
+    color: #c83f4e !important;
+}
+
+
+/* HOVER */
+
+.hbcr-list-page .hbcr-action-btn:hover,
+.hbcr-list-card .hbcr-action-btn:hover {
+    transform: translateY(-1px) !important;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.08) !important;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.hbcr-list-page .badge,
+.hbcr-list-card .badge {
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    min-width: 60px !important;
+
+    border-radius: 20px !important;
+
+    padding: 5px 9px !important;
+
+    font-size: 9px !important;
+
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.hbcr-list-page .pagination {
+    margin: 15px 0 0 !important;
+
+    gap: 4px !important;
+}
+
+.hbcr-list-page .page-link {
+    min-width: 31px !important;
+
+    text-align: center !important;
+
+    border: 1px solid #dce9e7 !important;
+
+    border-radius: 7px !important;
+
+    color: #078878 !important;
+
+    background: #fff !important;
+
+    font-size: 10px !important;
+
+    padding: 6px 9px !important;
+}
+
+.hbcr-list-page .page-item.active .page-link {
+    background: #08a88f !important;
+
+    border-color: #08a88f !important;
+
+    color: #fff !important;
+}
+
+
+/* =========================================================
+   REPORTS - PROFESSIONAL
+========================================================= */
+
+.hbcr-report-page {
+    width: 100% !important;
+}
+
+.hbcr-report-page .hbcr-report-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 16px !important;
+
+    width: 100% !important;
+}
+
+.hbcr-report-page .hbcr-report-card {
+    position: relative !important;
+
+    min-height: 190px !important;
+
+    padding: 22px 20px !important;
+
+    background: #fff !important;
+
+    border: 1px solid #dce9e7 !important;
+
+    border-radius: 15px !important;
+
+    box-shadow:
+        0 5px 20px rgba(25,73,76,.07) !important;
+
+    text-align: left !important;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease !important;
+}
+
+.hbcr-report-page .hbcr-report-card:hover {
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 10px 28px rgba(25,73,76,.10) !important;
+}
+
+
+/* REPORT ICON */
+
+.hbcr-report-page .hbcr-report-card i {
+    width: 46px !important;
+
+    height: 46px !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    margin: 0 0 14px !important;
+
+    border-radius: 12px !important;
+
+    background: #e8faf6 !important;
+
+    color: #078878 !important;
+
+    font-size: 18px !important;
+}
+
+
+/* REPORT TITLE */
+
+.hbcr-report-page .hbcr-report-card h4 {
+    margin: 0 0 6px !important;
+
+    color: #24444a !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* REPORT DESCRIPTION */
+
+.hbcr-report-page .hbcr-report-card p {
+    margin: 0 0 16px !important;
+
+    color: #718489 !important;
+
+    font-size: 10px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* REPORT BUTTON */
+
+.hbcr-report-page .hbcr-report-card .btn {
+    border-radius: 8px !important;
+
+    background: #08a88f !important;
+
+    color: #fff !important;
+
+    font-size: 10px !important;
+
+    padding: 7px 12px !important;
+}
+
+
+/* =========================================================
+   DASHBOARD - KEEP BELOW HEADER
+========================================================= */
+
+.hbcr-dashboard-header {
+    position: relative !important;
+
+    margin-top: 0 !important;
+
+    width: 100% !important;
+}
+
+.hbcr-dashboard-grid,
+.hbcr-stats-grid {
+    position: relative !important;
+
+    z-index: 1 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hbcr-report-page .hbcr-report-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .main-content {
+        padding-top: 75px !important;
+
+        padding-left: 12px !important;
+
+        padding-right: 12px !important;
+    }
+
+    .hbcr-report-page .hbcr-report-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+/* =========================================================
+   FINAL HEADER / MAIN CONTENT OVERLAP FIX
+========================================================= */
+
+.hbcr-header {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: var(--hbcr-sidebar-width) !important;
+    height: 70px !important;
+    z-index: 1000 !important;
+}
+
+.main-content {
+    margin-left: var(--hbcr-sidebar-width) !important;
+    padding-top: 100px !important;
+    padding-right: 28px !important;
+    padding-bottom: 40px !important;
+    padding-left: 28px !important;
+
+    min-height: 100vh !important;
+    width: calc(100% - var(--hbcr-sidebar-width)) !important;
+
+    position: relative !important;
+    z-index: 1 !important;
+}
+/* =========================================================
+   DASHBOARD - HEADER OVERLAP FIX
+========================================================= */
+
+.main-content .hbcr-dashboard-header {
+    margin-top: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+/* =========================================================
+   HBCR REPORTS - PROFESSIONAL DASHBOARD
+========================================================= */
+
+.hbcr-report-top {
+    width: 100%;
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 23px;
+
+    margin-bottom: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f7fcfb 100%
+        );
+
+    border: 1px solid #dce9e7;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 22px rgba(25,73,76,.07);
+}
+
+
+.hbcr-report-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #17363c;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+.hbcr-report-title i {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #e7f8f4;
+
+    color: #078878;
+
+    font-size: 17px;
+}
+
+
+.hbcr-report-subtitle {
+    margin-top: 5px;
+
+    color: #718489;
+
+    font-size: 11px;
+}
+
+
+.hbcr-report-date {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    background: #edf8f6;
+
+    color: #078878;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.hbcr-summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+
+
+.hbcr-summary-card {
+
+    min-height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e7;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(25,73,76,.07);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.hbcr-summary-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 25px rgba(25,73,76,.10);
+}
+
+
+.hbcr-summary-icon {
+
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #e7f8f4;
+
+    color: #078878;
+
+    font-size: 19px;
+}
+
+
+.hbcr-summary-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.hbcr-summary-content span {
+
+    color: #718489;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.hbcr-summary-content strong {
+
+    color: #17363c;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CHART GRID
+========================================================= */
+
+.hbcr-report-chart-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+
+
+.hbcr-report-chart-card {
+
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e7;
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(25,73,76,.07);
+
+    overflow: hidden;
+}
+
+
+.hbcr-chart-wide {
+
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   CHART HEADER
+========================================================= */
+
+.hbcr-chart-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding-bottom: 14px;
+
+    margin-bottom: 4px;
+
+    border-bottom: 1px solid #edf2f1;
+}
+
+
+.hbcr-chart-icon {
+
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #e7f8f4;
+
+    color: #078878;
+
+    font-size: 15px;
+}
+
+
+.hbcr-chart-heading h3 {
+
+    margin: 0;
+
+    color: #24444a;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.hbcr-chart-heading p {
+
+    margin: 3px 0 0;
+
+    color: #819196;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CHART BODY
+========================================================= */
+
+.hbcr-chart-body {
+
+    position: relative;
+
+    width: 100%;
+
+    padding-top: 15px;
+}
+
+
+.hbcr-pie-chart {
+
+    height: 280px;
+}
+
+
+.hbcr-bar-chart {
+
+    height: 320px;
+}
+
+
+.hbcr-status-area {
+
+    height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.hbcr-chart-body canvas {
+
+    max-width: 100% !important;
+
+    max-height: 100% !important;
+}
+
+
+/* =========================================================
+   EMPTY FOLLOW-UP STATE
+========================================================= */
+
+.hbcr-empty-report {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.hbcr-empty-icon {
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+
+    background: #f1f5f4;
+
+    color: #8a9a9e;
+
+    font-size: 21px;
+}
+
+
+.hbcr-empty-report strong {
+
+    color: #536b71;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+
+.hbcr-empty-report span {
+
+    max-width: 320px;
+
+    color: #8a999d;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   REPORT SUMMARY
+========================================================= */
+
+.hbcr-report-summary-card {
+
+    width: 100%;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce9e7;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(25,73,76,.07);
+}
+
+
+.hbcr-summary-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding-bottom: 14px;
+
+    margin-bottom: 14px;
+
+    border-bottom: 1px solid #edf2f1;
+}
+
+
+.hbcr-summary-heading h3 {
+
+    margin: 0;
+
+    color: #24444a;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.hbcr-summary-heading p {
+
+    margin: 3px 0 0;
+
+    color: #819196;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SUMMARY TABLE
+========================================================= */
+
+.hbcr-report-summary-table {
+
+    margin: 0 !important;
+
+    border: 0 !important;
+}
+
+
+.hbcr-report-summary-table thead th {
+
+    background: #edf8f6 !important;
+
+    color: #36545a !important;
+
+    padding: 11px 13px !important;
+
+    font-size: 10px !important;
+
+    border-bottom: 1px solid #dce9e7 !important;
+}
+
+
+.hbcr-report-summary-table tbody td {
+
+    padding: 12px 13px !important;
+
+    font-size: 11px !important;
+
+    vertical-align: middle !important;
+
+    border-bottom: 1px solid #edf2f1 !important;
+}
+
+
+.hbcr-report-summary-table tbody tr:last-child td {
+
+    border-bottom: 0 !important;
+}
+
+
+.hbcr-report-summary-table td:first-child {
+
+    color: #536b71 !important;
+
+    font-weight: 600;
+}
+
+
+.hbcr-report-summary-table td:first-child i {
+
+    width: 20px;
+
+    margin-right: 7px;
+
+    color: #078878;
+}
+
+
+.hbcr-total-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 48px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #e7f8f4;
+
+    color: #078878;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   REPORT RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hbcr-summary-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .hbcr-report-top {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .hbcr-report-date {
+
+        align-self: flex-start;
+    }
+
+
+    .hbcr-summary-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .hbcr-report-chart-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .hbcr-chart-wide {
+
+        grid-column: auto;
+    }
+
+
+    .hbcr-pie-chart,
+    .hbcr-status-area {
+
+        height: 260px;
+    }
+
+
+    .hbcr-bar-chart {
+
+        height: 300px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hbcr-report-top {
+
+        padding: 16px;
+    }
+
+
+    .hbcr-report-title {
+
+        font-size: 18px;
+    }
+
+
+    .hbcr-summary-card {
+
+        padding: 15px;
+    }
+
+
+    .hbcr-report-chart-card,
+    .hbcr-report-summary-card {
+
+        padding: 14px;
+    }
+
+}
+/* =========================================================
+   HBCR DASHBOARD - DARK TEAL + PASTEL PROFESSIONAL THEME
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   DASHBOARD HERO
+   --------------------------------------------------------- */
+
+.dashboard-hero {
+    background: linear-gradient(
+        135deg,
+        #e3f3ef 0%,
+        #e1eef1 100%
+    ) !important;
+
+    border: 1px solid #c9e2de !important;
+    border-radius: 16px !important;
+    box-shadow: 0 6px 22px rgba(25,73,76,.07) !important;
+}
+
+.hero-eyebrow {
+    color: #087f70 !important;
+}
+
+.hero-dot {
+    background: #08a88f !important;
+}
+
+.dashboard-hero h1 {
+    color: #173f43 !important;
+}
+
+.dashboard-hero p {
+    color: #647d82 !important;
+}
+
+.hero-date {
+    background: #ffffff !important;
+    border: 1px solid #c9e2de !important;
+    color: #31565b !important;
+}
+
+.hero-date-icon {
+    background: #dcefea !important;
+    color: #087f70 !important;
+}
+
+
+/* =========================================================
+   STATISTICS CARDS
+   ========================================================= */
+
+.stat-card {
+    border: 1px solid #dce9e7 !important;
+    background: #ffffff !important;
+    box-shadow: 0 5px 20px rgba(25,73,76,.07) !important;
+}
+
+
+/* PATIENTS - MINT */
+
+.stat-patients .stat-icon {
+    background: #dcefe9 !important;
+    color: #087f70 !important;
+}
+
+.stat-patients .stat-label {
+    color: #087f70 !important;
+}
+
+
+/* DIAGNOSIS - SOFT BLUE */
+
+.stat-diagnosis .stat-icon {
+    background: #dcecf1 !important;
+    color: #397585 !important;
+}
+
+.stat-diagnosis .stat-label {
+    color: #397585 !important;
+}
+
+
+/* TREATMENT - SOFT LAVENDER */
+
+.stat-treatment .stat-icon {
+    background: #e7e3f0 !important;
+    color: #6b6285 !important;
+}
+
+.stat-treatment .stat-label {
+    color: #6b6285 !important;
+}
+
+
+/* FOLLOW-UP - SOFT ROSE */
+
+.stat-followup .stat-icon {
+    background: #f2e1e6 !important;
+    color: #9a6573 !important;
+}
+
+.stat-followup .stat-label {
+    color: #9a6573 !important;
+}
+
+
+/* NUMBERS */
+
+.stat-number {
+    color: #173f43 !important;
+}
+
+.stat-description {
+    color: #718489 !important;
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+   ========================================================= */
+
+.dashboard-card {
+    background: #ffffff !important;
+    border: 1px solid #dce9e7 !important;
+    box-shadow: 0 5px 20px rgba(25,73,76,.07) !important;
+}
+
+.card-heading h3 {
+    color: #24444a !important;
+}
+
+.card-heading p {
+    color: #819196 !important;
+}
+
+.section-kicker {
+    color: #087f70 !important;
+}
+
+
+/* =========================================================
+   GRAPH / CHART ICONS
+   ========================================================= */
+
+/* Registration - AQUA */
+
+.card-icon.purple {
+    background: #dcefea !important;
+    color: #087f70 !important;
+}
+
+
+/* Gender - DUSTY ROSE */
+
+.card-icon.rose {
+    background: #f2e1e6 !important;
+    color: #9a6573 !important;
+}
+
+
+/* Cancer Sites - SOFT SAGE */
+
+.card-icon.sage {
+    background: #e2eee5 !important;
+    color: #597765 !important;
+}
+
+
+/* Stage - SOFT BUTTER */
+
+.card-icon.amber {
+    background: #f4edcf !important;
+    color: #8a7741 !important;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.quick-action {
+    background: #ffffff !important;
+    border: 1px solid #dce9e7 !important;
+}
+
+.quick-action:hover {
+    background: #f6fbfa !important;
+    border-color: #b9d9d3 !important;
+}
+
+
+/* REGISTER - MINT */
+
+.quick-icon.purple {
+    background: #dcefea !important;
+    color: #087f70 !important;
+}
+
+
+/* DIAGNOSIS - ROSE */
+
+.quick-icon.rose {
+    background: #f2e1e6 !important;
+    color: #9a6573 !important;
+}
+
+
+/* TREATMENT - SAGE */
+
+.quick-icon.sage {
+    background: #e2eee5 !important;
+    color: #597765 !important;
+}
+
+
+/* FOLLOW-UP - BUTTER */
+
+.quick-icon.amber {
+    background: #f4edcf !important;
+    color: #8a7741 !important;
+}
+
+
+.quick-content strong {
+    color: #24444a !important;
+}
+
+.quick-content span {
+    color: #7b8d91 !important;
+}
+
+.quick-arrow {
+    color: #6d858b !important;
+}
+
+
+/* =========================================================
+   PATIENT TABLE
+   ========================================================= */
+
+.patients-card {
+    background: #ffffff !important;
+}
+
+.professional-table thead th {
+    background: #e3f2ef !important;
+    color: #31585d !important;
+    border-bottom: 1px solid #c9e2de !important;
+}
+
+.professional-table tbody td {
+    color: #536b71 !important;
+    border-bottom: 1px solid #e7eeee !important;
+}
+
+.professional-table tbody tr:hover td {
+    background: #f4faf8 !important;
+}
+
+
+/* HBCR NUMBER */
+
+.hbcr-number {
+    background: #dcefea !important;
+    color: #087f70 !important;
+}
+
+
+/* PATIENT AVATAR */
+
+.patient-avatar {
+    background: #e2eef1 !important;
+    color: #397585 !important;
+}
+
+
+/* VIEW BUTTON */
+
+.action-view {
+    background: #dcefea !important;
+    color: #087f70 !important;
+}
+
+
+/* =========================================================
+   CHART AREA
+   ========================================================= */
+
+.chart-area {
+    background: #ffffff !important;
+}
+
+
+/* =========================================================
+   REMOVE PURPLE / PEACH FEEL FROM OLD DASHBOARD
+   ========================================================= */
+
+.dashboard-hero,
+.dashboard-stats,
+.analytics-grid,
+.quick-card,
+.patients-card {
+    --dashboard-teal: #087f70;
+    --dashboard-mint: #dcefea;
+    --dashboard-aqua: #dcecf1;
+    --dashboard-rose: #f2e1e6;
+    --dashboard-lavender: #e7e3f0;
+    --dashboard-sage: #e2eee5;
+    --dashboard-butter: #f4edcf;
+}
+
+
+/* =========================================================
+   CHART.JS CANVAS AREA
+   ========================================================= */
+
+.chart-area canvas {
+    background: transparent !important;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    text-align: center;
+    padding: 12px 0;
+    color: #354b4d;
+    font-size: 12px;
+    background: rgba(255,255,255,.92);
+    border-top: 1px solid #dce9e7;
+}
